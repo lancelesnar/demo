@@ -1,0 +1,654 @@
+PS F:\Git\demo> git push
+info: please complete authentication in your browser...
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 216 bytes | 108.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/lancelesnar/demo.git
+ * [new branch]      main -> main
+PS F:\Git\demo> git add ./dummy.txt
+PS F:\Git\demo> git commit -m "rechecking"
+[main 122435f] rechecking
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+PS F:\Git\demo> git push
+e.
+Writing objects: 100% (3/3), 283 bytes | 283.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/lancelesnar/demo.git
+   68ffaeb..122435f  main -> main
+PS F:\Git\demo> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+PS F:\Git\demo>
+
+
+                git add ./index.html
+PS F:\Git\demo> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)        
+        new file:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        style.css
+
+PS F:\Git\demo> git add ./style.css 
+PS F:\Git\demo> git branch
+* main
+PS F:\Git\demo> git checkout -b "frontend"
+Switched to a new branch 'frontend'
+PS F:\Git\demo> git branch
+* frontend
+  main
+PS F:\Git\demo> git checkout main         
+A       index.html
+A       style.css
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS F:\Git\demo> git branch       
+  frontend
+* main
+PS F:\Git\demo> git checkout frontend
+A       index.html
+A       style.css
+Switched to branch 'frontend'
+PS F:\Git\demo> git add .
+PS F:\Git\demo> git commit -m "feat:added some frontend code"
+[frontend 759542c] feat:added some frontend code
+ 2 files changed, 12 insertions(+)
+ create mode 100644 index.html
+ create mode 100644 style.css
+PS F:\Git\demo> git push
+fatal: The current branch frontend has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin frontend
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'. 
+
+PS F:\Git\demo> git push origin frontend
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 482 bytes | 241.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from rontend' on GitHub by visiting:
+remote:      https://github.com/lancelesnar/demo/pull/new/frontend
+remote:
+To https://github.com/lancelesnar/demo.git
+ * [new branch]      frontend -> frontend
+PS F:\Git\demo> git checkout -b "backend"
+Switched to a new branch 'backend'
+PS F:\Git\demo> git branch
+* backend
+  frontend
+  main
+PS F:\Git\demo>
+
+
+                git status
+On branch backend
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+        modified:   style.css
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        some.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS F:\Git\demo> git add.\some.java
+git: 'add.\some.java' is not a git command. See 'git --help'.
+PS F:\Git\demo> git add .\some.java
+PS F:\Git\demo> git commit -m "feat:added a backend file"
+[backend a8d4c11] feat:added a backend file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 some.java
+PS F:\Git\demo> git psush origin backend
+git: 'psush' is not a git command. See 'git --help'.
+
+The most similar command is
+        push
+PS F:\Git\demo> git push origin backend 
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 372 bytes | 37.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: 
+remote: Create a pull request for 'backend' on GitHub by visiting:
+remote:      https://github.com/lancelesnar/demo/pull/new/backend
+remote:
+To https://github.com/lancelesnar/demo.git
+ * [new branch]      backend -> backend
+PS F:\Git\demo> git add .\some.java
+PS F:\Git\demo> git commit -m "feat:changes"               
+>>   
+>> 
+[backend fb09d3b] feat:changes
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+PS F:\Git\demo> git push origin backend
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 284 bytes | 142.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/lancelesnar/demo.git
+   a8d4c11..fb09d3b  backend -> backend
+PS F:\Git\demo> git add .\index.html
+PS F:\Git\demo> git commit -m "feat:frontend index updated"
+
+[backend c94239c] feat:frontend index updated
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+PS F:\Git\demo> git push origin frontend
+Everything up-to-date
+PS F:\Git\demo> git status
+On branch backend
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   style.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS F:\Git\demo> git branch
+* backend
+  frontend
+  main
+PS F:\Git\demo> git checkout frontend
+M       style.css
+Switched to branch 'frontend'
+PS F:\Git\demo> git add .\index.html                       
+PS F:\Git\demo> git commit -m "feat:frontend index updated"
+
+On branch frontend
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   style.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS F:\Git\demo> git commit -m "feat:frontend index updated"
+
+On branch frontend
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+        modified:   style.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS F:\Git\demo> git add .\index.html                       
+PS F:\Git\demo> git commit -m "feat:frontend index updated"
+
+[frontend bbb8ba0] feat:frontend index updated
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+PS F:\Git\demo> git push origin frontend
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 402 bytes | 201.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/lancelesnar/demo.git
+   759542c..bbb8ba0  frontend -> frontend
+PS F:\Git\demo> git checkout backend
+M       style.css
+Switched to branch 'backend'
+PS F:\Git\demo> git add .
+PS F:\Git\demo> git commit -b "feat:addded h1"
+error: unknown switch `b'
+usage: git commit [-a | --interactive | --patch] [-s] [-v] [-u<mode>] [--amend]
+                  [--dry-run] [(-c | -C | --squash) <commit> | --fixup [(amend|reword):]<commit>)]
+                  [-F <file> | -m <msg>] [--reset-author] [--allow-empty]
+                  [--allow-empty-message] [--no-verify] [-e] [--author=<author>]
+                  [--date=<date>] [--cleanup=<mode>] [--[no-]status]
+                  [-i | -o] [--pathspec-from-file=<file> [--pathspec-file-nul]]
+                  [(--trailer <token>[(=|:)<value>])...] [-S[<keyid>]]
+                  [--] [<pathspec>...]
+
+    -q, --[no-]quiet      suppress summary after successful commit
+    -v, --[no-]verbose    show diff in commit message template
+
+Commit message options
+    -F, --[no-]file <file>
+                          read message from file
+    --[no-]author <author>
+                          override author for commit       
+    --[no-]date <date>    override date for commit
+    -m, --[no-]message <message>
+                          commit message
+    -c, --[no-]reedit-message <commit>
+                          reuse and edit message from specified commit
+    -C, --[no-]reuse-message <commit>
+                          reuse message from specified commit
+    --[no-]fixup [(amend|reword):]commit
+                          use autosquash formatted message to fixup or amend/reword specified commit
+    --[no-]squash <commit>
+                          use autosquash formatted message to squash specified commit
+    --[no-]reset-author   the commit is authored by me now (used with -C/-c/--amend)
+    --trailer <trailer>   add custom trailer(s)
+    -s, --[no-]signoff    add a Signed-off-by trailer      
+    -t, --[no-]template <file>
+                          use specified template file      
+    -e, --[no-]edit       force edit of commit
+    --[no-]cleanup <mode> how to strip spaces and #comments from message
+    --[no-]status         include status in commit message template
+    -S, --[no-]gpg-sign[=<key-id>]
+                          GPG sign commit
+
+Commit contents options
+    -a, --[no-]all        commit all changed files
+    -i, --[no-]include    add specified files to index for commit
+    --[no-]interactive    interactively add files
+    -p, --[no-]patch      interactively add changes        
+    -o, --[no-]only       commit only specified files      
+    -n, --no-verify       bypass pre-commit and commit-msg hooks
+    --verify              opposite of --no-verify
+    --[no-]dry-run        show what would be committed     
+    --[no-]short          show status concisely
+    --[no-]branch         show branch information
+    --[no-]ahead-behind   compute full ahead/behind values
+    --[no-]porcelain      machine-readable output
+    --[no-]long           show status in long format (default)
+    -z, --[no-]null       terminate entries with NUL       
+    --[no-]amend          amend previous commit
+    --no-post-rewrite     bypass post-rewrite hook
+    --post-rewrite        opposite of --no-post-rewrite    
+    -u, --[no-]untracked-files[=<mode>]
+                          show untracked files, optional modes: all, normal, no. (Default: all)
+    --[no-]pathspec-from-file <file>
+                          read pathspec from file
+    --[no-]pathspec-file-nul
+                          with --pathspec-from-file, pathspec elements are separated with NUL character
+
+PS F:\Git\demo> git push origin backend
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 328 bytes | 328.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/lancelesnar/demo.git
+   fb09d3b..c94239c  backend -> backend
+PS F:\Git\demo> git chekout frontend
+git: 'chekout' is not a git command. See 'git --help'.
+
+The most similar command is
+        checkout
+PS F:\Git\demo> git checkout frontend
+error: Your local changes to the following files would be overwritten by checkout:
+        index.html
+Please commit your changes or stash them before you switch branches.
+Aborting
+PS F:\Git\demo> git add .\index.html
+PS F:\Git\demo> git commit -m "feat:added h1"
+[backend 2a8bbdd] feat:added h1
+ 2 files changed, 1 insertion(+), 2 deletions(-)
+PS F:\Git\demo> git push origin backend
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 347 bytes | 173.00 KiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/lancelesnar/demo.git
+   c94239c..2a8bbdd  backend -> backend
+PS F:\Git\demo> git checkout frontend
+Switched to branch 'frontend'
+PS F:\Git\demo> git add .\index.html
+PS F:\Git\demo> git commit -m "feat:added h1 hello frontend"
+[frontend 13d2031] feat:added h1 hello frontend
+ 1 file changed, 1 insertion(+)
+PS F:\Git\demo> git push origin main
+To https://github.com/lancelesnar/demo.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/lancelesnar/demo.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+PS F:\Git\demo> git push origin frontend
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 388 bytes | 388.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/lancelesnar/demo.git
+   bbb8ba0..13d2031  frontend -> frontend
+PS F:\Git\demo> git push origin main    
+To https://github.com/lancelesnar/demo.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/lancelesnar/demo.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+PS F:\Git\demo> git pull origin main
+remote: Enumerating objects: 14, done.
+remote: Counting objects: 100% (13/13), done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 7 (delta 3), reused 0 (delta 0), pack-reused remote: Enumerating objects: 14, done.
+remote: Counting objects: 100% (13/13), done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 7 (delta 3), reused 0 (delta 0), pack-reused remote: Counting objects: 100% (13/13), done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 7 (delta 3), reused 0 (delta 0), pack-reused remote: Compressing objects: 100% (7/7), done.
+remote: Total 7 (delta 3), reused 0 (delta 0), pack-reused remote: Total 7 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (7/7), 3.65 KiB | 23.00 KiB/s, done0 (from 0)
+Unpacking objects: 100% (7/7), 3.65 KiB | 23.00 KiB/s, doneUnpacking objects: 100% (7/7), 3.65 KiB | 23.00 KiB/s, done.
+From https://github.com/lancelesnar/demo
+ * branch            main       -> FETCH_HEAD
+   122435f..eb59721  main       -> origin/main
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+PS F:\Git\demo> git add.\index.html
+git: 'add.\index.html' is not a git command. See 'git --help'.
+PS F:\Git\demo> git add .\index.html
+PS F:\Git\demo> git commit -m"feat:after merge conflict solved"
+[frontend 4f810a8] feat:after merge conflict solved
+PS F:\Git\demo> git push origin frontend
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 227 bytes | 227.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/lancelesnar/demo.git
+   13d2031..4f810a8  frontend -> frontend
+PS F:\Git\demo> git checkout backend
+Switched to branch 'backend'
+PS F:\Git\demo> git pull
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 1020 bytes | 15.00 KiB/s, done.
+From https://github.com/lancelesnar/demo
+   2a8bbdd..7298a41  backend    -> origin/backend
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.        
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> backend   
+
+PS F:\Git\demo> git pull origin backend
+From https://github.com/lancelesnar/demo
+ * branch            backend    -> FETCH_HEAD
+Updating 2a8bbdd..7298a41
+Fast-forward
+ index.html | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+PS F:\Git\demo> git pull origin backend
+From https://github.com/lancelesnar/demo
+ * branch            backend    -> FETCH_HEAD
+Already up to date.
+PS F:\Git\demo> git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.        
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> backend   
+
+PS F:\Git\demo> git add.\ index.html
+git: 'add.\' is not a git command. See 'git --help'.
+PS F:\Git\demo> git add .\ index.html
+PS F:\Git\demo> git pull origin backend
+From https://github.com/lancelesnar/demo
+ * branch            backend    -> FETCH_HEAD
+Already up to date.
+PS F:\Git\demo> git psuh origin backend
+git: 'psuh' is not a git command. See 'git --help'.
+
+The most similar command is
+        push
+PS F:\Git\demo> git push origin backend
+Everything up-to-date
+PS F:\Git\demo> git push origin backend
+Everything up-to-date
+PS F:\Git\demo> git add .\ index.html  
+PS F:\Git\demo> git commit -m"feat:checking stash 1"       
+[backend 6d43fce] feat:checking stash 1
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+PS F:\Git\demo> git push origin backend
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 330 bytes | 330.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/lancelesnar/demo.git
+   7298a41..6d43fce  backend -> backend
+PS F:\Git\demo> git pull
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 1011 bytes | 2.00 KiB/s, done.
+From https://github.com/lancelesnar/demo
+   6d43fce..0c89f6a  backend    -> origin/backend
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.        
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> backend   
+
+PS F:\Git\demo> git pull origin backend
+From https://github.com/lancelesnar/demo
+ * branch            backend    -> FETCH_HEAD
+Updating 6d43fce..0c89f6a
+error: Your local changes to the following files would be overwritten by merge:
+        index.html
+Please commit your changes or stash them before you merge. 
+Aborting
+PS F:\Git\demo> git stash
+Saved working directory and index state WIP on backend: 6d43fce feat:checking stash 1
+PS F:\Git\demo> git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.        
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> backend   
+
+PS F:\Git\demo> git pull origin backend
+From https://github.com/lancelesnar/demo
+ * branch            backend    -> FETCH_HEAD
+Updating 6d43fce..0c89f6a
+Fast-forward
+ index.html | 1 +
+ 1 file changed, 1 insertion(+)
+PS F:\Git\demo> git stash pop
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+On branch backend
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)        
+  (use "git add <file>..." to mark resolution)
+        both modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+The stash entry is kept in case you need it again.
+PS F:\Git\demo> git add .\index.html
+PS F:\Git\demo> git commit -m "feat:successfully stashed and popped file"
+[backend 1834582] feat:successfully stashed and popped file
+ 1 file changed, 1 insertion(+)
+PS F:\Git\demo> git push
+fatal: The current branch backend has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin backend
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'. 
+
+PS F:\Git\demo> git push origin backend
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 350 bytes | 175.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/lancelesnar/demo.git
+   0c89f6a..1834582  backend -> backend
+PS F:\Git\demo> git branch
+* backend
+  frontend
+  main
+PS F:\Git\demo> git branch -M "friendbackend"
+PS F:\Git\demo> git branch
+* friendbackend
+  frontend
+  main
+PS F:\Git\demo> git branch -a
+* friendbackend
+  frontend
+  main
+  remotes/origin/backend
+  remotes/origin/frontend
+  remotes/origin/main
+PS F:\Git\demo> git pull
+From https://github.com/lancelesnar/demo
+ * [new branch]      cloudbranch -> origin/cloudbranch     
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.        
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> friendbackend
+
+PS F:\Git\demo> git pull origin main
+From https://github.com/lancelesnar/demo
+ * branch            main       -> FETCH_HEAD
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+PS F:\Git\demo> git reset
+Unstaged changes after reset:
+M       index.html
+PS F:\Git\demo> git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.        
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> friendbackend
+
+PS F:\Git\demo> git branch -a
+* friendbackend
+  frontend
+  main
+  remotes/origin/backend
+  remotes/origin/cloudbranch
+  remotes/origin/frontend
+  remotes/origin/main
+set mark: ...skipping...
+* friendbackend
+  frontend
+  main
+  remotes/origin/backend
+  remotes/origin/cloudbranch
+  remotes/origin/frontend
+  remotes/origin/main
+...skipping...
+
+                   SUMMARY OF LESS COMMANDS
+
+      Commands marked with * may be preceded by a number, N.
+      Notes in parentheses indicate the behavior if N is given.
+      A key preceded by a caret indicates the Ctrl key; thus ^K is ctrl-K.
+
+  h  H                 Display this help.
+HELP -- Press RETURN for more, or q when done...skipping...
+* friendbackend
+  frontend
+  main
+  remotes/origin/backend
+  remotes/origin/cloudbranch
+  remotes/origin/frontend
+  remotes/origin/main
+PS F:\Git\demo> git add .\Readme.md
+PS F:\Git\demo> git commit -m "feat:added readme"
+[friendbackend 22d0cb3] feat:added readme
+ 1 file changed, 5 insertions(+)
+ create mode 100644 Readme.md
+PS F:\Git\demo> git push origin main
+To https://github.com/lancelesnar/demo.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/lancelesnar/demo.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. If you want to integrate the remote changes, use 'git pull'
+hint: before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+PS F:\Git\demo> git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> friendbackend
+
+PS F:\Git\demo> git pull origin main
+From https://github.com/lancelesnar/demo
+ * branch            main       -> FETCH_HEAD
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+PS F:\Git\demo> git push origin main
+To https://github.com/lancelesnar/demo.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/lancelesnar/demo.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. If you want to integrate the remote changes, use 'git pull'
+hint: before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+PS F:\Git\demo> git push origin frontend
+Everything up-to-date
+PS F:\Git\demo> git add .
+PS F:\Git\demo> git commit -m "Readme"
+[friendbackend e1eece6] Readme
+PS F:\Git\demo> git push origin frontend
+Everything up-to-date
+PS F:\Git\demo>
