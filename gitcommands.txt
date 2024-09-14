@@ -651,4 +651,6 @@ PS F:\Git\demo> git commit -m "Readme"
 [friendbackend e1eece6] Readme
 PS F:\Git\demo> git push origin frontend
 Everything up-to-date
-PS F:\Git\demo>
+PS F:\Git\demo>git diff
+PS F:\Git\demo>git log
+PS F:\Git\demo>use q to code again without stuck
